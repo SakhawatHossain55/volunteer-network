@@ -1,7 +1,12 @@
 .App {
   text-align: center;
 }
-
+h3{
+  font-family: 'Montserrat', sans-serif;
+}
+*{
+  font-family: 'Roboto', sans-serif;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

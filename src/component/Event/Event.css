@@ -1,0 +1,17 @@
+.events-style{
+    background-color: #ebe7e6;
+    font-style: normal;
+    margin-bottom: 30px;
+    height: 380px;
+}
+.events-style h3{
+    font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+padding-top: 20px ;
+}
+.events-style img{
+    padding: 20px;
+    width: 100%;
+}
