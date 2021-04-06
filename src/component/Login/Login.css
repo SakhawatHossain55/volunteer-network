@@ -1,7 +1,9 @@
 .login-style{
     width: 570px;
     height: 450px;
-    border: 1px solid gray
+    border: 1px solid gray;
+    padding: 160px 0;
+    
 }
 .button-style{
     width: 450px;

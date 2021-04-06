@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import { Link, useHistory, useLocation } from 'react-router-dom';
@@ -6,23 +6,18 @@ import './Login.css'
 import firebaseConfig from './firevase.confit';
 import { UserContext } from '../../App';
 
-if (!firebase.apps.length) {
+if (firebase.apps.length === 0) {
     firebase.initializeApp(firebaseConfig);
- }else {
-    firebase.app();
- }
-
+  }
  
-
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] =useContext(UserContext);
     const history = useHistory();
     const location = useLocation()
     const { from } = location.state || { from: { pathname: "/" } };
-    // const [user, setUser] = useState({})
-    console.log('loggedInUser', loggedInUser);
-    var provider = new firebase.auth.GoogleAuthProvider();
+
+    const provider = new firebase.auth.GoogleAuthProvider();
     const handleGoogleSignIn = () => {
         firebase.auth()
         .signInWithPopup(provider)
@@ -32,10 +27,9 @@ const Login = () => {
           setLoggedInUser(signedInUser);
           history.replace(from)
         }).catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          var email = error.email;
-          console.log(errorMessage, errorCode, email);
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorMessage, errorCode );
         });
     }
     return (
