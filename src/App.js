@@ -9,6 +9,7 @@ import { createContext, useState } from "react";
 import PrivateRout from "./component/PrivateRoute/PrivateRout";
 import Admin from "./component/Admin/Admin";
 import Events from "./component/Events/Events";
+import SingleEvent from "./component/SingleEvent/SingleEvent";
 
 export const UserContext = createContext();
 
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <PrivateRout path="/events">
             <Events />
+          </PrivateRout>
+          <PrivateRout path="/singleEvent/:_id">
+            <SingleEvent />
           </PrivateRout>
           <Route path="/login">
             <Login />

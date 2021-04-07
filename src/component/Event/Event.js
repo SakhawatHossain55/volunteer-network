@@ -6,7 +6,7 @@ const Event = ({ event }) => {
   const {imageURL, _id, name} = event
   const history = useHistory()
   const handleEventClick = () => {
-    history.push(`/events/${_id}`)
+    history.push(`/singleEvent/${_id}`)
   }
   return (
     <div className="col-lg-3  col-md-6 ">
