@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row, Spinner } from "react-bootstrap";
 import Event from "../Event/Event";
 import Header from "../Header/Header";
 
@@ -44,9 +44,9 @@ const Home = () => {
       </div>
       <Container>
         <div className="row">
-          {events.map((event) => (
-            <Event event={event} key={event._id}></Event>
-          ))}
+          { events.length == 0 ? 
+          <Row className="text-center"><Spinner animation="grow" /></Row> :
+           events.map((event) => <Event event={event} key={event._id}></Event>)}
         </div>
       </Container>
     </>

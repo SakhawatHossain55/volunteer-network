@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import { UserContext } from '../../App';
 import Header from '../Header/Header';
 import SelectedEvents from '../SelectedEvents/SelectedEvents';
@@ -24,7 +24,7 @@ const Events = () => {
             <Header />
             <div className="row">
               { 
-                (singleEvent.map(event => <SelectedEvents singleEvent={event}></SelectedEvents>) )
+                 singleEvent.length == 0 ? <Row><Spinner animation="grow" /></Row> :  singleEvent.map(event => <SelectedEvents singleEvent={event}></SelectedEvents>) 
               }
             </div>
             </Container>

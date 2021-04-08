@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./component/Home/Home";
-import Dashboard from "./component/Dashboard/Dashboard";
+import Dashboard from "./component/Donation/Donation";
 import Header from "./component/Header/Header";
 import Login from "./component/Login/Login";
 import { createContext, useState } from "react";
@@ -12,6 +12,7 @@ import Events from "./component/Events/Events";
 import SingleEvent from "./component/SingleEvent/SingleEvent";
 import EventList from "./component/EventList/EventList";
 import AddEvent from "./component/AddEvent/AddEvent";
+import SignIn from "./component/SignIn/SignIn";
 
 export const UserContext = createContext();
 
@@ -25,7 +26,7 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/dashboard">
+          <Route path="/donation">
             <Dashboard />
           </Route>
           <PrivateRout path="/events">
@@ -36,6 +37,9 @@ function App() {
           </PrivateRout>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/signIn">
+            <SignIn />
           </Route>
           <Route path="/admin">
             <Admin />

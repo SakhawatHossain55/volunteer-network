@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Table } from 'react-bootstrap';
+import { Container, Row, Spinner, Table } from 'react-bootstrap';
 import AddEvent from '../AddEvent/AddEvent';
 import VolunteerRegisterList from '../VolunteerRegisterList/VolunteerRegisterList';
 
@@ -30,7 +30,7 @@ const EventList = () => {
                             </tr>
                         </thead>
                         {
-                             (allVolunteer.map(volunteer => <VolunteerRegisterList allVolunteer={volunteer}></VolunteerRegisterList>))
+                             allVolunteer.length == 0 ? <Row className="align-items-center justify-content-center text-center"><Spinner animation="grow" /></Row> :  allVolunteer.map(volunteer => <VolunteerRegisterList allVolunteer={volunteer}></VolunteerRegisterList>)
                         }
                     </Table>
                 </div>

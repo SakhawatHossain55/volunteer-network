@@ -26,7 +26,7 @@ const Admin = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(eventData),
-    }).then((res) => console.log("server side responce"));
+    }).then((res) => console.log("server side response"));
   };
 
   const handleImageUpload = (event) => {
@@ -46,7 +46,7 @@ const Admin = () => {
   };
   return (
     <div>
-        <Row>
+        <Row className="vh-100">
         <AddEvent />
             <div className="col-lg-9 col-md-8 form-color p-5">
                 <h2>Add Event</h2>

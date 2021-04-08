@@ -36,7 +36,7 @@ const Login = () => {
         <div className="login-style rounded text-center container">
             <h3>Login With</h3>
             <button onClick={handleGoogleSignIn} className="button-style rounded-pill">Continue With Google</button>
-            <p>Don't have an account <Link>Create an account</Link></p>
+            <p>Don't have an account <Link to='/signIn'>Create an account</Link></p>
         </div>
     );
 };
