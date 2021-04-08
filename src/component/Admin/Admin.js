@@ -4,8 +4,6 @@ import { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import AddEvent from "../AddEvent/AddEvent";
-import EventList from "../EventList/EventList";
-import Header from "../Header/Header";
 import "./Admin.css";
 
 const Admin = () => {

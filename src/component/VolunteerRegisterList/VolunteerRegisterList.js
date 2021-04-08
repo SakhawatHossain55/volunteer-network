@@ -1,11 +1,21 @@
 import React from 'react';
 
 const VolunteerRegisterList = (props) => {
-    console.log(props.allVolunteer);
+    // console.log(props.allVolunteer);
+    const {userName, _id, email, date, name} = props.allVolunteer;
+    const deleteEvent = () => {
+        console.log('click me');
+    }
     return (
-        <div>
-            <h3>Volunteer register list</h3>
-        </div>
+        <>
+        <tr>
+            <td>{userName}</td>
+            <td>{email}</td>
+            <td>{date}</td>
+            <td>{name}</td>
+            <td><button onClick={() => deleteEvent(_id)}>Delete</button></td>
+        </tr>
+        </>
     );
 };
 
