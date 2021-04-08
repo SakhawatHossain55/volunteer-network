@@ -10,6 +10,8 @@ import PrivateRout from "./component/PrivateRoute/PrivateRout";
 import Admin from "./component/Admin/Admin";
 import Events from "./component/Events/Events";
 import SingleEvent from "./component/SingleEvent/SingleEvent";
+import EventList from "./component/EventList/EventList";
+import AddEvent from "./component/AddEvent/AddEvent";
 
 export const UserContext = createContext();
 
@@ -18,7 +20,6 @@ function App() {
 
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-
       <Router>
         <Switch>
           <Route path="/home">
@@ -36,9 +37,15 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <PrivateRout path="/admin">
+          <Route path="/admin">
             <Admin />
-          </PrivateRout>
+          </Route>
+          <Route path="/addEvent">
+            <AddEvent />
+          </Route>
+          <Route path="/eventList">
+            <EventList />
+          </Route>
           <Route path="/">
             <Home />
           </Route>

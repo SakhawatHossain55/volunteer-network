@@ -1,7 +1,10 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
+import { Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import AddEvent from "../AddEvent/AddEvent";
+import EventList from "../EventList/EventList";
 import Header from "../Header/Header";
 import "./Admin.css";
 
@@ -45,24 +48,24 @@ const Admin = () => {
   };
   return (
     <div>
-      <Header />
-      <form className="admin-style container" onSubmit={handleSubmit(onSubmit)}>
-        <h5>Event Title</h5>
-        <input className="form-control" name="event" placeholder="Enter title" ref={register} />
-        <br />
-        <h5>New Date</h5>
-        <input className="form-control" type="date" name="date" id="" ref={register}/>
-        <br />
-
-        <h5>Description</h5>
-        <textarea className="form-control" name="description" placeholder="Enter Designation" cols="30" rows="5" ref={register}></textarea>
-
-        <br />
-        <h5>Banner</h5>
-        <input className="form-control" type="file" name="exampleRequired" onChange={handleImageUpload} />
-        <br />
-        <input className="form-control" type="submit" />
-      </form>
+        <Row>
+        <AddEvent />
+            <div className="col-lg-9 col-md-8 form-color p-5">
+                <h2>Add Event</h2>
+                <form className="admin-style" onSubmit={handleSubmit(onSubmit)}>
+                  
+                  <input className="form-control" name="event" placeholder="Enter title" ref={register} />
+                  <br />
+                  <input className="form-control" type="date" name="date" id="" ref={register}/>
+                  <br />
+                  <textarea className="form-control" name="description" placeholder="Enter Designation" cols="30" rows="5" ref={register}></textarea>
+                  <br />
+                  <input className="form-control" type="file" name="exampleRequired" onChange={handleImageUpload} />
+                  <br />
+                  <input className="form-control submit-style" type="submit" />
+                </form>
+            </div>
+        </Row>
     </div>
   );
 };
